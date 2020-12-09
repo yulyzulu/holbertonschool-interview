@@ -20,7 +20,7 @@ def canUnlockAll(boxes):
             state[key] = 1
             for j in boxes[key]:
                 if j not in keys:
-                   keys.append(j)
+                    keys.append(j)
 
     if 0 in state:
         return False
