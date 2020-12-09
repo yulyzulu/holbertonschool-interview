@@ -18,9 +18,9 @@ def canUnlockAll(boxes):
     for key in keys:
         if key < lengthBox and state[key] == 0:
             state[key] = 1
-        for j in boxes[key]:
-            if j not in keys:
-                keys.append(j)
+            for j in boxes[key]:
+                if j not in keys:
+                   keys.append(j)
 
     if 0 in state:
         return False
