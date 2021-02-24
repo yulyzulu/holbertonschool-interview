@@ -8,7 +8,7 @@
 */
 int direction_left(int *line, int size)
 {
-	int x, y;
+	int x, y; 
 	int tmp = line[0], aux = 0;
 
 	for (x = 0; x < size; x++)
