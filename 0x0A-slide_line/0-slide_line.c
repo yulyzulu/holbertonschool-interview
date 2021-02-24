@@ -8,7 +8,7 @@
 */
 int direction_left(int *line, int size)
 {
-	int x, y; 
+	int x, y;
 	int tmp = line[0], aux = 0;
 
 	for (x = 0; x < size; x++)
@@ -51,10 +51,10 @@ int direction_left(int *line, int size)
 
 
 /**
-*direction_rigth - Move to the right
-*@line: Pointer to an array of integers
-*@size: size of the array
-*Return: 1 uppon success, or 0 upon failure
+* direction_right - Move to the right
+* @line: Pointer to an array of integers
+* @size: size of the array
+* Return: 1 uppon success, or 0 upon failure
 */
 int direction_right(int *line, int size)
 {
