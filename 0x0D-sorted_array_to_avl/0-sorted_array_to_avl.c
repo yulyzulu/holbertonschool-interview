@@ -46,10 +46,10 @@ avl_t *sort_avl_tree(int *array, size_t start, size_t end, avl_t *parent)
 		return (NULL);
 
 	if (middle != start)
-		return (node->left = sort_avl_tree(array, start, middle - 1, node));
+		node->left = sort_avl_tree(array, start, middle - 1, node);
 
 	if (middle != end)
-		return (node->right = sort_avl_tree(array, middle + 1, end, node));
+		node->right = sort_avl_tree(array, middle + 1, end, node);
 
 	return (node);
 }
