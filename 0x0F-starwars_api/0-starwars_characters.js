@@ -9,10 +9,16 @@ request(url, function(err, res, body) {
   if (err) {
     console.log(err);
   }
-  const str = JSON.parse(body);
-  str.characters.map (person => {
-    let path = person.split('/');
-    
-    console.log(path[path.length - 2]);
-  })
+  const data = JSON.parse(body);
+  const character = data.characters;
+  for (const i in character) {
+    const url2 = character[i];
+    request(url2, function(err, res, body) {
+      if (err) {
+        console.log(err);
+      }
+      const dataChar = JSON.parse(body);
+      console.log(dataChar.name);
+    })
+  }
 });
