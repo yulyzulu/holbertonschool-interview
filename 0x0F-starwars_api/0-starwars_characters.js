@@ -6,24 +6,23 @@ const request = require('request');
 
 request(url, function (err, res, body) {
   if (err) {
-    console.log(err);
+    throw err;
   }
   const data = JSON.parse(body);
-  const character = data.characters;
-  const charactersFilm = [];
-  for (const i in character) {
-    const url2 = character[i];
-    console.log(url2)
-    request(url2, function (err, res, body) {
-      if (err) {
-        console.log(err);
-      }
-      const dataChar = JSON.parse(body);
-      //charactersFilm.push(dataChar.name);
-      printCharacter(dataChar.name);
-    });
-  }
-  const printCharacter = (character) => {
-    console.log(character);
-  }
+  const characters = data.characters;
+  printCharacter(characters, 0);
 });
+
+const printCharacter = (urls, index) => {
+  if (urls.lenght === index) {
+    return;
+  }
+  request(urls[index], function (err, res, body) {
+    if (err) {
+      throw err;
+    }
+    const dataChar = JSON.parse(body).name;
+    console.log(dataChar);
+    printCharacter(urls, index + 1);
+  });
+};
