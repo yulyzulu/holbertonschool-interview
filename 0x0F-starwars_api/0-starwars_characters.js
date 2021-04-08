@@ -10,6 +10,7 @@ request(url, function (err, res, body) {
   }
   const data = JSON.parse(body);
   const character = data.characters;
+  const charactersFilm = [];
   for (const i in character) {
     const url2 = character[i];
     console.log(url2)
@@ -18,7 +19,11 @@ request(url, function (err, res, body) {
         console.log(err);
       }
       const dataChar = JSON.parse(body);
-      console.log(dataChar.name);
+      //charactersFilm.push(dataChar.name);
+      printCharacter(dataChar.name);
     });
+  }
+  const printCharacter = (character) => {
+    console.log(character);
   }
 });
