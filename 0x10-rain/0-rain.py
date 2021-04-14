@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" Rain algorithm"""
 
 
 def rain(walls):
+    """ """
     wall_len = len(walls)
     if wall_len == 0:
         return 0
@@ -13,6 +15,6 @@ def rain(walls):
 
         right = walls[i]
         for j in range(i + 1, wall_len):
-           right = max(right, walls[j])
+            right = max(right, walls[j])
         count = count + (min(left, right) - walls[i])
     return count
