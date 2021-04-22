@@ -7,7 +7,7 @@
 *@a: swap value
 *@b: swap value
 */
-void swapF(int *a, int *b)
+void swap(int *a, int *b)
 {
 	int temp = *a;
 	*a = *b;
@@ -20,26 +20,27 @@ void swapF(int *a, int *b)
 *@array: array to sort
 *@start: start array
 *@end: end array
+*@size: size of array
 */
 void siftDown(int *array, size_t start, size_t end, size_t size)
 {
-        size_t root = start;
-        size_t child;
+	size_t root = start;
+	size_t child;
 
-        while (root * 2 + 1 <= end)
-        {
+	while (root * 2 + 1 <= end)
+	{
 		child = root * 2 + 1;
-                if (child + 1 <= end && array[child] < array[child + 1])
-                        child = child + 1;
-                if (array[root] < array[child])
-                {
-                        swapF(&array[root], &array[child]);
-                        print_array(array, size);
-                        root = child;
-                }
-                else
-                        return;
-        }
+		if (child + 1 <= end && array[child] < array[child + 1])
+			child = child + 1;
+		if (array[root] < array[child])
+		{
+			swap(&array[root], &array[child]);
+			print_array(array, size);
+			root = child;
+		}
+		else
+			return;
+	}
 }
 
 /**
@@ -65,17 +66,17 @@ void heapify(int *array, size_t size)
 */
 void heap_sort(int *array, size_t size)
 {
-        size_t end = size - 1;
+	size_t end = size - 1;
 
-        if (size < 2)
-                return;
+	if (size < 2)
+		return;
 
-        heapify(array, size);
-        while (end > 0)
-        {
-                swapF(&array[end], &array[0]);
-                print_array(array, size);
-                end = end - 1;
-                siftDown(array, 0, end, size);
-        }
+	heapify(array, size);
+	while (end > 0)
+	{
+		swap(&array[end], &array[0]);
+		print_array(array, size);
+		end = end - 1;
+		siftDown(array, 0, end, size);
+	}
 }
