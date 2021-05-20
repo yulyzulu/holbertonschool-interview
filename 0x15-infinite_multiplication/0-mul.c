@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * _printentry point
- * @str: char variable
- * @l: int variable
+ * _print - Entry
+ * @str: Char variable
+ * @l: Integer variable
  */
 
 void _print(char *str, int l)
