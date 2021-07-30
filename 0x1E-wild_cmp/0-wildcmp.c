@@ -1,11 +1,11 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * Compare - Function to compare two strings
- * @s1: First string
- * @s2: Second string
- * @ast: Flag for asterisk
- * Return: integer
+*compare - Function to compare two strings
+*@s1: First string
+*@s2: Second string
+*@ast: Flag for asterisk
+*Return: integer
 */
 int compare(char *s1, char *s2, int ast)
 {
@@ -32,10 +32,11 @@ int compare(char *s1, char *s2, int ast)
 	return (-1);
 }
 /**
-* wildcmp - Function that compares two strings with recursion
-* @s1: First string
-* @s2: Second string
-* Return: Returns 1 if the strings can be considered identical, otherwise return 0
+*wildcmp - Function that compares two strings with recursion
+*@s1: First string
+*@s2: Second string
+*Return: Returns 1 if the strings can be considered identical,
+*otherwise return 0
 */
 int wildcmp(char *s1, char *s2)
 {
