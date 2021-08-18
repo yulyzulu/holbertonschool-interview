@@ -1,21 +1,24 @@
 #include "substring.h"
+
 /**
- * cmp_values - Function that compare two values
- * @a: first value
- * @b: second value
- * Return: substraction
- **/
+* cmp_values - Function that compare two values
+* @a: first value
+* @b: second value
+* Return: substraction
+**/
 int cmp_values(const void *a, const void *b)
 {
 	return (*(int *)a - *(int *)b);
 }
+
+
 /**
- * check_words - Function that chek if all words are continous
- * @aux_index: array with index for ever word
- * @wordlen: word size
- * @idx_len: aux_index size
- * Return: index firt word or zero
- **/
+* check_words - Function that chek if all words are continous
+* @aux_index: array with index for ever word
+* @wordlen: word size
+* @idx_len: aux_index size
+* Return: index firt word or zero
+**/
 int check_words(int *aux_index, int wordlen, int idx_len)
 {
 	int i;
@@ -27,13 +30,15 @@ int check_words(int *aux_index, int wordlen, int idx_len)
 	}
 	return (1);
 }
+
+
 /**
- * search_word - Function that search words in string
- * @s: string base
- * @words: array of words to search in the string
- * @nb_words: number of words
- * Return: array with size of substring for every word, otherwise NULL
- **/
+* search_word - Function that search words in string
+* @s: string base
+* @words: array of words to search in the string
+* @nb_words: number of words
+* Return: array with size of substring for every word, otherwise NULL
+**/
 int *search_word(char const *s, char const **words, int nb_words)
 {
 	int *aux_index, i, j;
@@ -71,15 +76,17 @@ int *search_word(char const *s, char const **words, int nb_words)
 	}
 	return (aux_index);
 }
+
+
 /**
- * find_substring - Function that search_word words in string
- * @s: string base
- * @words: array of words to searh in the string
- * @nb_words: number of words
- * @n: return size
- * Return: array with index for every word or NULL
- *
- **/
+* find_substring - Function that search_word words in string
+* @s: string base
+* @words: array of words to searh in the string
+* @nb_words: number of words
+* @n: return size
+* Return: array with index for every word or NULL
+*
+**/
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
 	int *index, *aux_index, wordlen, j, diff, s_len, f_indx, tmp;
